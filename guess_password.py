@@ -2,7 +2,7 @@ import random
 import string
 import datetime
 import unittest
-import genetic
+import genetic_a
 
 
 def get_fitness(genes, target):
@@ -30,8 +30,8 @@ class GuessPasswordTests(unittest.TestCase):
             display_fitness(candidate, start_time)
 
         optimal_fitness = len(target)
-        best = genetic.get_best(runGetFitness, len(target), optimal_fitness,
-                                self.gene_pool, runDisplayFitness)
+        best = genetic_a.get_best(runGetFitness, len(target), optimal_fitness,
+                                  self.gene_pool, runDisplayFitness)
         self.assertEqual(''.join(best.Genes), target)
 
     def test_Hello_World(self):
@@ -54,7 +54,7 @@ class GuessPasswordTests(unittest.TestCase):
 
     def test_benchmark(self):
         print("\nInitiating Benchmark Test")
-        genetic.Benchmark.run(self.test_Random)
+        genetic_a.Benchmark.run(self.test_Random)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 import datetime
 import unittest
-import genetic
+import genetic_a
 
 
 def get_fitness(genes):
@@ -27,12 +27,12 @@ class OneMaxTests(unittest.TestCase):
             return get_fitness(genes)
 
         optimal_fitness = length
-        best = genetic.get_best(runGetFitness, length, optimal_fitness,
-                                gene_pool, runDisplayFitness)
+        best = genetic_a.get_best(runGetFitness, length, optimal_fitness,
+                                  gene_pool, runDisplayFitness)
         self.assertEqual(best.Fitness, optimal_fitness)
 
     def test_benchmark(self):
-        genetic.Benchmark.run(lambda: self.test(4000))
+        genetic_a.Benchmark.run(lambda: self.test(4000))
 
 
 if __name__ == '__main__':
