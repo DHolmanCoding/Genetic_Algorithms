@@ -27,8 +27,8 @@ class OneMaxTests(unittest.TestCase):
             return get_fitness(genes)
 
         optimal_fitness = length
-        best = genetic.get_best(runDisplayFitness, length, optimal_fitness,
-                                gene_pool, runGetFitness)
+        best = genetic.get_best(runGetFitness, length, optimal_fitness,
+                                gene_pool, runDisplayFitness)
         self.assertEqual(best.Fitness, optimal_fitness)
 
     def test_benchmark(self):
